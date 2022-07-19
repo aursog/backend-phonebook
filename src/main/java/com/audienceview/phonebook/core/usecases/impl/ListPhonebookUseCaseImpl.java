@@ -5,6 +5,7 @@ import com.audienceview.phonebook.core.usecases.ListPhonebookUseCase;
 import com.audienceview.phonebook.datasources.jpas.PhonebookJPA;
 import com.audienceview.phonebook.framework.adapters.ListPhonebookAdapter;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,6 +21,7 @@ public class ListPhonebookUseCaseImpl implements ListPhonebookUseCase {
     public List<Phonebook> getListPhonebook() {
         return adapter.findAll().stream()
                 .filter(PhonebookJPA::getActive)
+                .sorted(Comparator.comparing(PhonebookJPA::getId).reversed())
                 .map(jpa -> new Phonebook.Builder()
                     .id(jpa.getId())
                     .fullname(jpa.getFullname())
