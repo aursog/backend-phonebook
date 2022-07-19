@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/phonebook")
+@CrossOrigin
 public class PhonebookController {
 
     private CreatePhonebookPresenter createPresenter;
