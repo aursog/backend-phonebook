@@ -12,10 +12,10 @@ public class CreatePhonebookPresenterImpl implements CreatePhonebookPresenter {
 
     @Override
     public ResponseEntity<CreationObjectDTO> present(Phonebook phonebook) {
-        URI uri = ServletUriComponentsBuilder.fromUriString("/phonebook/{id}").buildAndExpand(phonebook.getId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromUriString("/phonebook/get/{id}").buildAndExpand(phonebook.getId()).toUri();
         return ResponseEntity.created(uri).body(CreationObjectDTO.builder()
                 .id(phonebook.getId())
-                .uri("/phonebook/" + phonebook.getId())
+                .uri("/phonebook/get/" + phonebook.getId())
                 .build()
         );
     }
