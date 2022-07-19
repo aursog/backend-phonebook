@@ -21,12 +21,20 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.codehaus.jackson:jackson-core-asl:1.9.13'
+	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.platform:junit-platform-suite'
+	testImplementation 'org.junit.jupiter:junit-jupiter-migrationsupport'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+springBoot {
+	buildInfo()
 }
