@@ -11,7 +11,7 @@ public class Phonebook {
     private final LocalDateTime modifyAt;
     private final Boolean active;
 
-    private static class Builder {
+    public static class Builder {
         private Long id;
         private String fullname;
         private String phone;
@@ -57,12 +57,12 @@ public class Phonebook {
     }
 
     public Phonebook(Builder builder) {
-        this.id = builder.id;
-        this.fullname = builder.fullname;
-        this.phone = builder.phone;
-        this.creationAt = builder.creationAt;
-        this.modifyAt = builder.modifyAt;
-        this.active = builder.active;
+        id = builder.id;
+        fullname = builder.fullname;
+        phone = builder.phone;
+        creationAt = builder.creationAt;
+        modifyAt = builder.modifyAt;
+        active = builder.active;
     }
 
     public Long getId() {

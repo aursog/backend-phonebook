@@ -1,38 +1,38 @@
 package com.audienceview.phonebook.datasources.jpas;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Value;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "phonebook")
-@Value
 @Builder
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class PhonebookJPA {
 
     @Id
-    Long id = 0L;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column
-    String fullname = "";
+    private String fullname;
 
     @Column
-    String phone = "";
+    private String phone;
 
     @Column(name = "creation_at")
-    LocalDateTime creationAt = LocalDateTime.now();
+    private LocalDateTime creationAt;
 
     @Column(name = "modify_at")
-    LocalDateTime modifyAt = null;
+    private LocalDateTime modifyAt;
 
     @Column
-    Boolean active = false;
+    private Boolean active;
 
 }
