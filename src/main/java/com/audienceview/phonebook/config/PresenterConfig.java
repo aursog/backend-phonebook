@@ -1,8 +1,10 @@
 package com.audienceview.phonebook.config;
 
 import com.audienceview.phonebook.framework.presenters.CreatePhonebookPresenter;
+import com.audienceview.phonebook.framework.presenters.DeletePhonebookPresenter;
 import com.audienceview.phonebook.framework.presenters.ListPhonebookPresenter;
 import com.audienceview.phonebook.framework.presenters.impl.CreatePhonebookPresenterImpl;
+import com.audienceview.phonebook.framework.presenters.impl.DeletePhonebookPresenterImpl;
 import com.audienceview.phonebook.framework.presenters.impl.ListPhonebookPresenterImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,4 +20,6 @@ public class PresenterConfig {
     @Bean
     public ListPhonebookPresenter listPhonebookPresenter() { return new ListPhonebookPresenterImpl(); }
 
+    @Bean
+    public DeletePhonebookPresenter deletePhonebookPresenter() { return new DeletePhonebookPresenterImpl(); }
 }
