@@ -53,7 +53,7 @@ public class PhonebookController {
         return listPresenter.present(listUseCase.getListPhonebook());
     }
 
-    @PutMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deactivatePhonebookRegister(@PathVariable Long id) {
         return deletePresenter.present(deleteUseCase.deletePhonebookRegister(id));
     }
